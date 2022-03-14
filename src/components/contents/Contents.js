@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Content from '../content/Content'
+//import Content from '../content/Content'
 import getData from '../data/Data'
 import './Contents-Style'
 import { StyleIt } from './Contents-Style'

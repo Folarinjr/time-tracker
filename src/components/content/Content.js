@@ -51,7 +51,8 @@ const Content = ({title, timeframes: {daily, weekly, monthly}, timeOfTheDay}) =>
         <div>
           <h2>{title}</h2> <img src={iconEllip} alt="icon Ellipsis" />
         </div>  
-        <div className="content__details">
+
+        <div>
           <StyledCardCurrent>
             {timeOfTheDay === 'daily' 
               ? `${daily.current}` :

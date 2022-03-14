@@ -2,64 +2,79 @@ import styled from 'styled-components'
 
 export const SideBarMain = styled.div`
 background-color: #0e1e38;
-color: #fff;
-font-size: 1.5rem;
-width: 45%
 
 overflow: hidden;
 
-display: flex;
-flex-direction: column;
-border-radius: 9px;
+grid-row: 1 / 3;
 `;
 
 export const SideBarHeader = styled.div`
-    display: flex;
-    flex-direction: column;
     background-color: #34397B;
-    padding: 2rem 3rem 5rem 2rem;
-    width: 100%;
-    border-radius: 9px;
+    padding: 3rem;
+    border-radius: 1.5rem;
+
+    display: flex;
+    align-items: center;
+
+
+    @media only screen and (min-width: 1100px) {
+        padding-bottom: 8.5rem;
+      }
+      @media only screen and (min-width: 578px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+    
 `;
 
 export const SideBarHeaderImage = styled.div`
-    position: relative;
-
-    width: 70%;
-    aspect-ratio: 1/1;
-
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: 70%;
-        height: auto;
-
-        border: 5px solid #fff;
-        border-radius: 50%;
-    }
+width: 7rem;
+height: 7rem;
+border: 0.2rem solid #fff;
+border-radius: 50%;
+margin-right: 1.7rem;
+@media only screen and (min-width: 578px){
+  margin-right: 0rem;
+  margin-bottom: 1.7rem;
+}
+@media only screen and (min-width: 1100px) {
+  width: 8.5rem;
+  height: 8.5rem;
+  margin-bottom: 3.9rem;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 `;
 
 
 export const SideBarHeaderText = styled.div`
-    h1{
-        margin: 0;
-        margin-bottom: 5rem;
-        font-size: 6rem;
+span {
+    font-size: 1.6rem;
+    opacity: 0.8;
+  }
+  h1 {
+    font-weight: 300;
+    font-size: 2.4rem;
+    margin-top: 0.5rem;
+    @media only screen and (min-width: 1100px) {
+      font-size: 4rem;
     }
-    span{
-        font-size: 3rem;
-    }
+  }
 `;
 
 export const SideBarText = styled.div`
-display: flex;
-flex-direction: column;
-gap: 2px;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
 
-background-color: transparent;
-padding: 2rem 3rem 3rem 2rem;
+    @media only screen and (min-width: 578px) {
+        flex-direction: column;
+  }
 
 ${({timeOfTheDay}) =>
     timeOfTheDay === 'daily' ? 'span:first-child{color: white;}': 

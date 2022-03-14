@@ -1,23 +1,28 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
 
-import Contents from '../contents/Contents';
+import Content from '../content/Content';
 import SideBar from '../sidebar/SideBar';
 
-//import getData from '../data/Data';
+import getData from '../data/Data';
 import './Container-style.js'
 import { ContainerStyle } from './Container-style.js';
 
 const Container = () => {
     const [timeOfTheDay, setTimeOfTheDay] = useState('daily');
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        setData(getData());
+        //eslint-disable-next-line
+    },[]);
 
   return (
     <ContainerStyle>
-      <div>
+      
       <SideBar timeOfTheDay={timeOfTheDay} setTimeOfTheDay={setTimeOfTheDay}/>
-      </div>
-      <div>
-        <Contents timeOfTheDay={timeOfTheDay}/>
-      </div>  
+      
+      
+      { data && data.map(({id, ...otherDataProps}) => (<Content key={id} {...otherDataProps} timeOfTheDay={timeOfTheDay} />))}
+      
     </ContainerStyle>
   )
 }

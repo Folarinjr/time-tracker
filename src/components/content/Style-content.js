@@ -11,10 +11,14 @@ export const StyleContent = styled.div`
 
     border-radius: 1.5rem;
     overflow: hidden;
-    min-height: 25rem;
+    min-height: 16rem;
+
+    display: flex;
+    align-items: flex-end;
+
     position: relative;
     cursor: pointer;  
-    color: white;
+  
 `;
 export const StyleContentHeader = styled.img`
     position: absolute;
@@ -28,13 +32,22 @@ export const StyleContentTitle = styled.div`
     background-color: hsl(235, 46%, 20%);
     width: 100%;
     border-radius: 1.5rem;
-    transition: all .4s;
+    transition: all 800ms ease;
+    
     
     position: absolute;
     top: 5rem;
     bottom: 0;
 
     z-index: 3;
+
+    &:hover{
+      background-color: #34397B;
+    }
+
+    @media only screen and (min-width: 1100px) {
+      height: 20rem;
+    }
 
     div:first-child {
         display: flex;
@@ -45,6 +58,9 @@ export const StyleContentTitle = styled.div`
         h2 {
           font-size: 1.5rem;
           font-weight: 500;
+          @media only screen and (min-width: 1100px) {
+            margin-bottom: 2.2rem;
+          }
         }
         img {
           cursor: pointer;
@@ -54,27 +70,28 @@ export const StyleContentTitle = styled.div`
     div:last-child {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         padding: 2rem 2rem 1rem 2rem;
-        flex-direction: column;
+
+        @media only screen and (min-width: 1100px) {
+          flex-direction: column;
+          align-items: flex-start;        }
+        }
       }
-
-    &:hover{
-      background-color: #34397B;
-    }
-
    
 `;
 
 export const StyledCardCurrent = styled.h3`
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 300;
-  padding-bottom: 1rem;
-  margin-top: 1.2rem;
+  @media only screen and (min-width: 1100px){
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const StyledCardPrevious = styled.span`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   opacity: 0.7;
 `;
